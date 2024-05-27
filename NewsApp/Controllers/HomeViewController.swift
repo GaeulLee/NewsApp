@@ -9,26 +9,64 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
+    @IBOutlet weak var tableView: UITableView!
+    
+    var networkManager = NetworkManager.shared
+    var articles: [Article] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.title = "Home"
-
         
+        tableView.dataSource = self
+        networkManager.delegate = self
+        
+        setupUI()
     }
     
+    func setupUI(){
+        tableView.register(UINib(nibName: K.cellNibName, bundle: nil), forCellReuseIdentifier: K.cellIdentifier)
+        
+        networkManager.fetchArticles()
+    }
 
     @IBAction func searchButtonTapped(_ sender: UIBarButtonItem) {
-        performSegue(withIdentifier: "HomeToSearch", sender: self)
+        performSegue(withIdentifier: K.Segue.searchSegue, sender: self)
     }
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+}
+
+extension HomeViewController: NetworkManagerDelegate {
+    
+    func didUpdateArticles(_ articleManager: NetworkManager, _ articles: ArticleData) {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+
     }
-    */
+    
+    func didFailWithError(error: Error) {
+        print(error)
+    }
 
+}
+
+extension HomeViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        //print(articles.count)
+        return articles.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: K.cellIdentifier, for: indexPath) as! ArticleTableViewCell
+        
+        cell.titleLabel.text = articles[indexPath.row].title
+        cell.descLabel.text = articles[indexPath.row].description
+        cell.nameLabel.text = articles[indexPath.row].source.name
+        //cell.dateLabel.text = articles[indexPath.row].publishedAt
+        
+        return cell
+    }
+    
+    
 }

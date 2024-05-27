@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReusableCell" rowHeight="125" id="KGk-i7-Jjw" customClass="ArticleTableViewCell" customModule="NewsApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="427" height="125"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="427" height="125"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UnI-ox-bwv">
+                        <rect key="frame" x="5" y="5" width="417" height="100"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Ssc-dF-iXY">
+                                <rect key="frame" x="0.0" y="0.0" width="417" height="100"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="CX1-qb-l7s">
+                                        <rect key="frame" x="0.0" y="0.0" width="312" height="100"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="의대 지역인재선발 약 2배 늘어날 듯…전체 인원의 61% - 한겨레" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PBL-qj-1XI">
+                                                <rect key="frame" x="0.0" y="0.0" width="312" height="35"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="OLX-VP-Nex"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m3S-tl-MwM">
+                                                <rect key="frame" x="0.0" y="35" width="312" height="55"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="55" id="S5t-Cf-cRG"/>
+                                                </constraints>
+                                                <string key="text">내년도 의과대학의 모집인원이 크게 늘면서, 비수도권 의대의 지역인재 선발 인원도 2배 가까이 늘어날 전망이다. 26일 한겨레 취재와 연합뉴스 등을 종합하면, 비수도권 의대 26곳은 2025학년도에 모집인원 3111명 가운데 1897명(61%)을 지역인재전형으로 선발할</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="gYg-0Z-xnd">
+                                                <rect key="frame" x="0.0" y="90" width="312" height="10"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Hani.co.kr" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lf7-9K-8k5">
+                                                        <rect key="frame" x="0.0" y="0.0" width="239" height="10"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="10" id="nCO-di-et3"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="2024-05-26" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="onn-XT-KaO">
+                                                        <rect key="frame" x="241" y="0.0" width="71" height="10"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OWR-aE-kJ8">
+                                        <rect key="frame" x="317" y="0.0" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="8ew-c0-C2b"/>
+                                            <constraint firstAttribute="width" constant="100" id="u0c-0c-jTO"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Ssc-dF-iXY" firstAttribute="leading" secondItem="UnI-ox-bwv" secondAttribute="leading" id="46t-Hr-98C"/>
+                            <constraint firstItem="Ssc-dF-iXY" firstAttribute="top" secondItem="UnI-ox-bwv" secondAttribute="top" id="88H-oF-Jh5"/>
+                            <constraint firstAttribute="trailing" secondItem="Ssc-dF-iXY" secondAttribute="trailing" id="RkS-Dd-3vP"/>
+                            <constraint firstAttribute="bottom" secondItem="Ssc-dF-iXY" secondAttribute="bottom" id="TTE-XJ-xY9"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="UnI-ox-bwv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="IrU-w7-FFg"/>
+                    <constraint firstAttribute="bottom" secondItem="UnI-ox-bwv" secondAttribute="bottom" constant="5" id="VKB-4N-ib4"/>
+                    <constraint firstItem="UnI-ox-bwv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="hgX-Oy-5CH"/>
+                    <constraint firstAttribute="trailing" secondItem="UnI-ox-bwv" secondAttribute="trailing" constant="5" id="m7k-4M-51a"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="ImageView" destination="OWR-aE-kJ8" id="nA9-q6-FnQ"/>
+                <outlet property="dateLabel" destination="onn-XT-KaO" id="jN4-vf-iEX"/>
+                <outlet property="descLabel" destination="m3S-tl-MwM" id="PgK-0T-fk0"/>
+                <outlet property="nameLabel" destination="Lf7-9K-8k5" id="Tsn-Xw-Bhx"/>
+                <outlet property="titleLabel" destination="PBL-qj-1XI" id="ZIS-8v-Plf"/>
+            </connections>
+            <point key="canvasLocation" x="425.19083969465646" y="-81.338028169014095"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

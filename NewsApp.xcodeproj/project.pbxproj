@@ -17,7 +17,6 @@
 		9BD12F012BFE20EA00BBCCFA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BD12EFF2BFE20EA00BBCCFA /* LaunchScreen.storyboard */; };
 		9BD12F0E2BFF701A00BBCCFA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD12F0D2BFF701A00BBCCFA /* HomeViewController.swift */; };
 		9BD12F102BFF704600BBCCFA /* SavedArticlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD12F0F2BFF704600BBCCFA /* SavedArticlesViewController.swift */; };
-		9BD12F122BFF74E800BBCCFA /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD12F112BFF74E800BBCCFA /* SearchViewController.swift */; };
 		9BD12F1A2C04A0F600BBCCFA /* NewsAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD12F192C04A0F600BBCCFA /* NewsAppTests.swift */; };
 		9BD12F252C04ADC400BBCCFA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD12F242C04ADC400BBCCFA /* Constants.swift */; };
 		9BD12F2A2C04B11A00BBCCFA /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD12F282C04B11A00BBCCFA /* ArticleTableViewCell.swift */; };
@@ -53,7 +52,6 @@
 		9BD12F022BFE20EA00BBCCFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9BD12F0D2BFF701A00BBCCFA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		9BD12F0F2BFF704600BBCCFA /* SavedArticlesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedArticlesViewController.swift; sourceTree = "<group>"; };
-		9BD12F112BFF74E800BBCCFA /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		9BD12F172C04A0F600BBCCFA /* NewsAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NewsAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BD12F192C04A0F600BBCCFA /* NewsAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAppTests.swift; sourceTree = "<group>"; };
 		9BD12F242C04ADC400BBCCFA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -150,7 +148,6 @@
 				9BD12EF52BFE20E800BBCCFA /* ViewController.swift */,
 				9BD12F0D2BFF701A00BBCCFA /* HomeViewController.swift */,
 				9BD12F0F2BFF704600BBCCFA /* SavedArticlesViewController.swift */,
-				9BD12F112BFF74E800BBCCFA /* SearchViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -354,7 +351,6 @@
 			files = (
 				9BD12F2A2C04B11A00BBCCFA /* ArticleTableViewCell.swift in Sources */,
 				9BD12EF62BFE20E800BBCCFA /* ViewController.swift in Sources */,
-				9BD12F122BFF74E800BBCCFA /* SearchViewController.swift in Sources */,
 				9BD12EF22BFE20E800BBCCFA /* AppDelegate.swift in Sources */,
 				9BD12F102BFF704600BBCCFA /* SavedArticlesViewController.swift in Sources */,
 				9BD12EFC2BFE20E800BBCCFA /* NewsApp.xcdatamodeld in Sources */,

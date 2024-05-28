@@ -8,7 +8,7 @@
 import Foundation
 
 protocol NetworkManagerDelegate {
-    func didUpdateArticles(_ articleManager: NetworkManager, _ articles: ArticleData)
+    func didUpdateArticles(_ articleManager: NetworkManager, _ updatedArticles: [Article])
     func didFailWithError(error: Error)
 }
 
@@ -18,7 +18,7 @@ final class NetworkManager {
     private init() {}
     
     var delegate: NetworkManagerDelegate?
-    
+
     
     
     func fetchArticles() {
@@ -29,6 +29,7 @@ final class NetworkManager {
     
     func fetchArticles(searchFor: String) {
         let url = "https://newsapi.org/v2/everything?apiKey=\(K.apiKey)&q=\(searchFor)"
+        print(url)
         performRequest(with: url)
     }
     
@@ -39,14 +40,14 @@ final class NetworkManager {
             let session = URLSession(configuration: .default) // 2. create a URLSession
             let task = session.dataTask(with: url) { data, response, error in // 3. give the session a task
                 if error != nil {
-                    print(#function)
                     self.delegate?.didFailWithError(error: error!)
                     return
                 }
                 
                 if let safeData = data {
                     if let articles = self.parseJSON(safeData) {
-                        print(articles.articles.count)
+                        print(#function)
+                        print("count: \(articles.count)")
                         self.delegate?.didUpdateArticles(self, articles)
                     }
                 }
@@ -55,17 +56,17 @@ final class NetworkManager {
         }
     }
     
-    private func parseJSON(_ articleData: Data) -> ArticleData? {
+    private func parseJSON(_ articleData: Data) -> [Article]? {
         let decoder = JSONDecoder()
         do {
             let decodedData = try decoder.decode(ArticleData.self, from: articleData)
+            let updatedArticles = decodedData.articles
             
-            let status = decodedData.status
-            let totalResults = decodedData.totalResults
-            let articles = decodedData.articles
-            let results = ArticleData(status: status, totalResults: totalResults, articles: articles)
+            let filterdArticles = updatedArticles.filter { article in
+                return article.title != "[Removed]"
+            }
             
-            return results
+            return filterdArticles
         } catch {
             print(#function)
             self.delegate?.didFailWithError(error: error)

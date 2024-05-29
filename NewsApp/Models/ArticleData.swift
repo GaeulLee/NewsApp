@@ -25,7 +25,7 @@ struct Article: Codable {
         guard let isoDate = ISO8601DateFormatter().date(from: publishedAt ) else { return "" }
         
         let myFormatter = DateFormatter()
-        myFormatter.dateFormat = "yyyy-MM-dd"
+        myFormatter.dateFormat = "yyyy-MM-dd HH:mm"
         let dateString = myFormatter.string(from: isoDate)
 
         return dateString

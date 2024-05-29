@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Ab2-gY-eqc">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Ab2-gY-eqc">
                                 <rect key="frame" x="0.0" y="148" width="393" height="621"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
@@ -28,6 +28,10 @@
                                     <constraint firstAttribute="height" constant="45" id="5W5-9b-mxU"/>
                                 </constraints>
                                 <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
                                 <connections>
                                     <outlet property="delegate" destination="a3q-4v-ium" id="wEa-fM-oH4"/>
                                 </connections>
@@ -59,11 +63,19 @@
         <scene sceneID="fGF-yb-Xiy">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Fm6-um-NvD" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="hdf-ZW-ZsG"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="hdf-ZW-ZsG">
+                        <color key="badgeColor" name="IconColor"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="SFO-RG-Cvq">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <navigationBarAppearance key="standardAppearance">
+                            <color key="backgroundColor" name="NavAndTapColor"/>
+                            <textAttributes key="titleTextAttributes">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                            </textAttributes>
+                        </navigationBarAppearance>
                         <navigationBarAppearance key="scrollEdgeAppearance">
                             <color key="backgroundColor" name="NavAndTapColor"/>
                             <textAttributes key="titleTextAttributes">
@@ -105,11 +117,7 @@
                             <constraint firstItem="82O-Jf-H43" firstAttribute="trailing" secondItem="AN1-lI-Ztm" secondAttribute="trailing" id="zT3-Gd-5ex"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Saved Articles" id="YRd-yW-RZO">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="htP-dF-naW">
-                            <color key="tintColor" name="IconColor"/>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Saved Articles" id="YRd-yW-RZO"/>
                     <connections>
                         <outlet property="savedTableView" destination="AN1-lI-Ztm" id="JEI-fC-f61"/>
                     </connections>
@@ -127,7 +135,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" name="NavAndTapColor"/>
+                        <color key="tintColor" name="IconColor"/>
                         <color key="selectedImageTintColor" name="IconColor"/>
+                        <tabBarAppearance key="standardAppearance">
+                            <color key="backgroundColor" name="NavAndTapColor"/>
+                        </tabBarAppearance>
+                        <tabBarAppearance key="scrollEdgeAppearance">
+                            <color key="backgroundColor" name="NavAndTapColor"/>
+                        </tabBarAppearance>
                     </tabBar>
                     <connections>
                         <segue destination="Fm6-um-NvD" kind="relationship" relationship="viewControllers" id="3UR-Ln-rKQ"/>
@@ -147,6 +162,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="tkr-CX-xFP">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <navigationBarAppearance key="standardAppearance">
+                            <color key="backgroundColor" name="NavAndTapColor"/>
+                        </navigationBarAppearance>
                         <navigationBarAppearance key="scrollEdgeAppearance">
                             <color key="backgroundColor" name="NavAndTapColor"/>
                         </navigationBarAppearance>

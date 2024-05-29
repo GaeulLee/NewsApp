@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class HomeViewController: UIViewController {
     
@@ -13,9 +14,18 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var seachBar: UISearchBar!
     
     var networkManager = NetworkManager.shared
+    var coreDataManager = CoreDataManager.shared
     var articles: [Article] = []
     
     
+    // 화면에 다시 진입할때마다 테이블뷰 리로드
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    
+        networkManager.fetchArticles()
+        tableView.reloadData()
+        seachBar.text = ""
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,19 +34,11 @@ class HomeViewController: UIViewController {
         tableView.delegate = self
         networkManager.delegate = self
         
-        setupUI()
+        tableView.register(UINib(nibName: K.cellNibName, bundle: nil), forCellReuseIdentifier: K.cellIdentifier)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
-    }
-    
-    
-    
-    private func setupUI(){
-        tableView.register(UINib(nibName: K.cellNibName, bundle: nil), forCellReuseIdentifier: K.cellIdentifier)
-        
-        networkManager.fetchArticles()
     }
 
 }
@@ -91,6 +93,7 @@ extension HomeViewController: UITableViewDataSource {
         cell.nameLabel.text = articles[indexPath.row].source.name
         cell.dateLabel.text = articles[indexPath.row].date
         cell.imageUrl = articles[indexPath.row].urlToImage
+        cell.selectionStyle = UITableViewCell.SelectionStyle.none
         
         return cell
     }
@@ -103,15 +106,23 @@ extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let save = UIContextualAction(style: .normal, title: "Save") { (UIContextualAction, UIView, success: @escaping (Bool) -> Void) in
             
-            print(self.articles[indexPath.row].title)
-            
+            self.coreDataManager.saveArticle(articleToSave: self.articles[indexPath.row])
+            //print(self.articles[indexPath.row].title)
             success(true)
         }
         save.backgroundColor = .systemPink
         save.image = UIImage(systemName: "bookmark.fill")
         
         //actions배열 인덱스 0이 왼쪽에 붙어서 나옴
-        return UISwipeActionsConfiguration(actions: [ save ])
+        return UISwipeActionsConfiguration(actions: [save])
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        guard let url = URL(string: self.articles[indexPath.row].url) else { return }
+        
+        let safariViewController = SFSafariViewController(url: url)
+        present(safariViewController, animated: true, completion: nil)
     }
     
 }

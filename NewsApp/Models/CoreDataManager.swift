@@ -50,7 +50,7 @@ class CoreDataManager {
             
             do {
                 if let fetchedArticleList = try context.fetch(request) as? [ArticleModel] {
-                    if let targetArticle = fetchedArticleList.first {
+                    if fetchedArticleList.first != nil {
                         print("Article duplicated.")
                         return
                     }

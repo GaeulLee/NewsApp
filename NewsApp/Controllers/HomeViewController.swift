@@ -7,6 +7,7 @@
 
 import UIKit
 import SafariServices
+import Toast_Swift
 
 class HomeViewController: UIViewController {
     
@@ -25,6 +26,8 @@ class HomeViewController: UIViewController {
         networkManager.fetchArticles()
         tableView.reloadData()
         seachBar.text = ""
+        
+        view.makeToastActivity(.center)
     }
     
     override func viewDidLoad() {
@@ -54,6 +57,9 @@ extension HomeViewController: UISearchBarDelegate {
         }
         print("searchWord: \(searchWord)")
         
+        DispatchQueue.main.async {
+            self.view.makeToastActivity(.center)
+        }
         networkManager.fetchArticles(searchFor: searchWord)
     }
     
@@ -65,8 +71,10 @@ extension HomeViewController: NetworkManagerDelegate {
     
     func didUpdateArticles(_ articleManager: NetworkManager, _ updatedArticles: [Article]) {
         self.articles = updatedArticles
+
         DispatchQueue.main.async {
             self.tableView.reloadData()
+            self.view.hideToastActivity()
         }
     }
     
@@ -108,6 +116,7 @@ extension HomeViewController: UITableViewDelegate {
             
             self.coreDataManager.saveArticle(articleToSave: self.articles[indexPath.row])
             //print(self.articles[indexPath.row].title)
+            self.view.makeToast("Successfully saved an article.", duration: 1.0)
             success(true)
         }
         save.backgroundColor = .systemPink

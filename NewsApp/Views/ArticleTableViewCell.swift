@@ -37,8 +37,10 @@ class ArticleTableViewCell: UITableViewCell {
     
     
     private func loadImage() {
-        guard let urlString = self.imageUrl, let url = URL(string: urlString) else {
-            ImageView.isHidden = true
+        ImageView.isHidden = true
+        guard let urlString = self.imageUrl, let url = URL(string: urlString) else { return }
+        if !urlString.contains("https://") {
+            print("invalid imageUrl ->  \(urlString)")
             return
         }
         

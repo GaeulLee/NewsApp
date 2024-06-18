@@ -64,6 +64,7 @@
 		9BD12F372C073AFF00BBCCFA /* ArticleModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ArticleModel.xcdatamodel; sourceTree = "<group>"; };
 		9BD12F392C07440C00BBCCFA /* ArticleModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArticleModel+CoreDataClass.swift"; sourceTree = "<group>"; };
 		9BD12F3A2C07440C00BBCCFA /* ArticleModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArticleModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9BD12F3D2C21A6B900BBCCFA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C9B72A5DA73E255F4055D94D /* Pods-NewsAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsAppTests.release.xcconfig"; path = "Target Support Files/Pods-NewsAppTests/Pods-NewsAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		DB32B45C98ED19123A431026 /* Pods-NewsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsApp.release.xcconfig"; path = "Target Support Files/Pods-NewsApp/Pods-NewsApp.release.xcconfig"; sourceTree = "<group>"; };
 		EF7DC3EA099571F798AD5684 /* Pods-NewsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsApp.debug.xcconfig"; path = "Target Support Files/Pods-NewsApp/Pods-NewsApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -112,6 +113,7 @@
 		9BD12EE52BFE20E800BBCCFA = {
 			isa = PBXGroup;
 			children = (
+				9BD12F3D2C21A6B900BBCCFA /* README.md */,
 				9BD12EF02BFE20E800BBCCFA /* NewsApp */,
 				9BD12F182C04A0F600BBCCFA /* NewsAppTests */,
 				9BD12EEF2BFE20E800BBCCFA /* Products */,

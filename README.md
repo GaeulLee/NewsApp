@@ -16,12 +16,12 @@
 ## 1-2) 기능
 ### [1] 기사 목록
 NewsAPI를 통해 받아온 기사 데이터를 사용하여 테이블뷰 형식으로 보여준다.<br>
-<img src="https://velog.velcdn.com/images/22_gaeul/post/2e7bd9ad-6ac3-4d5b-a04f-254a2aff6fcc/image.gif" width="300" height="620">
+<img src="https://velog.velcdn.com/images/22_gaeul/post/c076f50f-e988-4b94-a0da-9719cafd899a/image.gif" width="300" height="620">
 <br>
 
 ### [2] 기사 검색
 SearchBar에 사용자가 입력한 키워드로 기사를 검색하고, 검색된 결과를 보여준다.<br>
-<img src="https://velog.velcdn.com/images/22_gaeul/post/46e579d1-a244-411d-97dc-c11c03c32882/image.gif" width="300" height="620">
+<img src="https://velog.velcdn.com/images/22_gaeul/post/fa1b250d-a7de-4086-9691-86aeb495b16a/image.gif" width="300" height="620">
 <br>
 
 ### [3] 기사 보기
@@ -31,7 +31,7 @@ SearchBar에 사용자가 입력한 키워드로 기사를 검색하고, 검색�
 
 ### [4] 기사 저장
 기사 목록 중 저장하고 싶은 기사를 왼쪽으로 스크롤하여 저장한다.<br>
-<img src="https://velog.velcdn.com/images/22_gaeul/post/e642810f-249e-48bd-9825-697bff73268b/image.gif" width="300" height="620">
+<img src="https://velog.velcdn.com/images/22_gaeul/post/b7e0ffed-18d1-49e8-a9bb-c60fe2d5c81e/image.gif" width="300" height="620">
 <br>
 
 ### [5] 저장한 기사 삭제
